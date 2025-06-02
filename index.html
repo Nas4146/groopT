@@ -85,7 +85,7 @@
         }
         
         .hero-container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -93,30 +93,31 @@
         .hero h1 {
             font-size: 3.5em;
             margin-bottom: 20px;
-            font-weight: 700;
+            font-weight: bold;
         }
         
         .hero p {
             font-size: 1.3em;
             margin-bottom: 40px;
             opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px;
         }
         
         .cta-buttons {
             display: flex;
-            gap: 20px;
             justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 15px 30px;
-            font-size: 1.1em;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            display: inline-flex;
             align-items: center;
             gap: 10px;
         }
@@ -164,15 +165,18 @@
         .section-subtitle {
             text-align: center;
             font-size: 1.2em;
-            margin-bottom: 60px;
             color: #666;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
-            margin-bottom: 60px;
+            margin-top: 60px;
         }
         
         .feature-card {
@@ -181,12 +185,11 @@
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .feature-icon {
@@ -205,7 +208,7 @@
             line-height: 1.6;
         }
         
-        /* How It Works Section */
+        /* How It Works */
         .how-it-works {
             padding: 80px 0;
             background: white;
@@ -223,10 +226,10 @@
         }
         
         .step-number {
+            background: #667eea;
+            color: white;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -267,16 +270,14 @@
         
         /* Support Page Styles */
         .support-content {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 0;
-        }
-        
-        .support-container {
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
+        }
+        
+        .support-container {
             background: white;
+            padding: 40px;
             border-radius: 12px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
@@ -314,6 +315,81 @@
         
         .email-link:hover {
             text-decoration: underline;
+        }
+        
+        /* Privacy Policy Styles */
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .privacy-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .privacy-logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .privacy-tagline {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .privacy-container h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .privacy-container h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .privacy-container ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .privacy-container li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .privacy-container strong {
+            color: #333;
+        }
+        
+        .privacy-highlight {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .privacy-contact {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
         }
         
         /* Mobile Responsive */
@@ -358,6 +434,7 @@
             <div class="nav-tabs">
                 <a href="#" class="nav-tab active" onclick="showPage('home')">Home</a>
                 <a href="#" class="nav-tab" onclick="showPage('support')">Support</a>
+                <a href="#" class="nav-tab" onclick="showPage('privacy')">Privacy Policy</a>
             </div>
         </div>
     </nav>
@@ -544,6 +621,81 @@
                     <li>Your device model and iOS version</li>
                     <li>Screenshots if applicable</li>
                 </ul>
+                
+                <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #888;">
+                    <p>© 2025 GroopTroop. Made with ❤️ for group travelers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Page -->
+    <div id="privacy" class="page">
+        <div class="privacy-content">
+            <div class="privacy-container">
+                <div class="privacy-header">
+                    <div class="privacy-logo">🎒 GroopTroop</div>
+                    <div class="privacy-tagline">Protecting Your Privacy While You Travel</div>
+                </div>
+                
+                <h1>Privacy Policy</h1>
+                
+                <p>At GroopTroop, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our group travel planning app.</p>
+                
+                <h2>🔍 Information We Collect</h2>
+                <ul>
+                    <li><strong>Account Information:</strong> Name, email address through Google Sign-In</li>
+                    <li><strong>Messages:</strong> Group messages (encrypted end-to-end)</li>
+                    <li><strong>Payment Data:</strong> Venmo payment information for group expenses</li>
+                    <li><strong>Device Information:</strong> Device identifiers for security and functionality</li>
+                </ul>
+                
+                <h2>🎯 How We Use Information</h2>
+                <ul>
+                    <li>Provide secure group messaging services</li>
+                    <li>Process group payments through Venmo</li>
+                    <li>Maintain app security with end-to-end encryption</li>
+                    <li>Improve app performance and user experience</li>
+                </ul>
+                
+                <h2>🔐 Data Security</h2>
+                <div class="privacy-highlight">
+                    <ul>
+                        <li><strong>Message Encryption:</strong> All messages are encrypted using industry-standard encryption (XSalsa20 + Poly1305)</li>
+                        <li><strong>Payment Security:</strong> Payment processing handled securely through Venmo</li>
+                        <li><strong>Data Storage:</strong> Data stored using Google Firebase with enterprise-grade security</li>
+                        <li><strong>End-to-End Encryption:</strong> Your conversations are private and secure</li>
+                    </ul>
+                </div>
+                
+                <h2>🤝 Third-Party Services</h2>
+                <ul>
+                    <li><strong>Google:</strong> Authentication and cloud services</li>
+                    <li><strong>Venmo:</strong> Payment processing</li>
+                    <li><strong>Sentry:</strong> Error tracking and app improvement</li>
+                    <li><strong>Firebase:</strong> Secure data storage and real-time messaging</li>
+                </ul>
+                
+                <h2>🛡️ Your Rights</h2>
+                <ul>
+                    <li>Access your personal data</li>
+                    <li>Request data correction or deletion</li>
+                    <li>Opt out of non-essential data collection</li>
+                    <li>Download your data</li>
+                </ul>
+                
+                <h2>📱 Children's Privacy</h2>
+                <p>GroopTroop is not intended for use by children under 13. We do not knowingly collect personal information from children under 13.</p>
+                
+                <h2>🔄 Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+                
+                <div class="privacy-contact">
+                    <h2>📧 Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                    <p><strong>Email:</strong> <a href="mailto:support.grooptroop@gmail.com" class="email-link">support.grooptroop@gmail.com</a></p>
+                    <p><strong>Last Updated:</strong> June 2025</p>
+                </div>
                 
                 <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #888;">
                     <p>© 2025 GroopTroop. Made with ❤️ for group travelers.</p>
