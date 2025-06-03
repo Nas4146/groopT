@@ -67,7 +67,7 @@
         
         /* Encryption Page Styles */
         .encryption-content {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 120px 20px 40px;
         }
@@ -132,33 +132,10 @@
         
         .encryption-container h2 {
             color: #667eea;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
             border-bottom: 2px solid #f0f0f0;
             padding-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .encryption-container h3 {
-            color: #333;
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-        
-        .encryption-container ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .encryption-container li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-        
-        .encryption-container strong {
-            color: #333;
         }
         
         .crypto-highlight {
@@ -169,111 +146,47 @@
             border-left: 4px solid #667eea;
         }
         
-        .algorithm-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .algorithm-table th {
-            background: #667eea;
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .algorithm-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .algorithm-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .algorithm-table tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
-        .code-block {
-            background: #2d3748;
-            color: #e2e8f0;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            overflow-x: auto;
-            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        
-        .code-comment {
-            color: #68d391;
-        }
-        
-        .compliance-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
         
-        .compliance-card {
+        .feature-card {
             background: #f8f9fa;
             padding: 25px;
             border-radius: 12px;
-            border: 1px solid #e9ecef;
             text-align: center;
+            border: 1px solid #e9ecef;
         }
         
-        .compliance-icon {
+        .feature-icon {
             font-size: 3em;
             margin-bottom: 15px;
             color: #28a745;
         }
         
-        .tech-specs {
-            background: #fff;
-            border: 2px solid #667eea;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
-        }
-        
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-tabs {
-                gap: 10px;
+                gap: 15px;
             }
             
             .nav-tab {
-                padding: 8px 12px;
-                font-size: 0.85em;
+                padding: 8px 15px;
+                font-size: 0.9em;
             }
             
             .encryption-content {
-                padding: 100px 15px 40px;
+                padding: 100px 20px 40px;
             }
             
             .encryption-container {
-                padding: 25px 20px;
+                padding: 30px 20px;
             }
             
-            .algorithm-table {
-                font-size: 14px;
-            }
-            
-            .algorithm-table th,
-            .algorithm-table td {
-                padding: 10px 8px;
-            }
-            
-            .compliance-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -301,222 +214,81 @@
                 <div class="encryption-tagline">Military-Grade Encryption for Your Group Travel</div>
             </div>
             
-            <h1>Encryption Overview</h1>
+            <h1>End-to-End Encryption</h1>
             
-            <p>GroopTroop implements <strong>end-to-end encryption</strong> for group messaging using standard, internationally accepted cryptographic algorithms. The app does not use any proprietary encryption methods.</p>
+            <p>GroopTroop protects your group conversations and travel plans with industry-standard, military-grade encryption. Your privacy and security are our top priorities.</p>
             
             <div class="download-section">
-                <h3>📋 Complete Technical Documentation</h3>
-                <p>Download our comprehensive encryption specification document for detailed implementation details.</p>
-                <a href="#" class="download-btn" onclick="downloadPDF()">
-                    📄 Download Encryption Specification PDF
+                <h3>📋 Technical Documentation</h3>
+                <p>Download our comprehensive encryption specification for detailed technical implementation.</p>
+                <a href="GroopTroop-Encryption-Specification.pdf" class="download-btn" download>
+                    📄 Download Encryption Specification
                 </a>
             </div>
 
-            <h2>🔐 Encryption Implementation Details</h2>
+            <h2>🔒 Security Overview</h2>
             
-            <h3>Cryptographic Libraries Used</h3>
-            <div class="code-block">
-<span class="code-comment">// Primary encryption library</span>
-import nacl from 'tweetnacl'; <span class="code-comment">// NaCl (Networking and Cryptography Library)</span>
-import util from 'tweetnacl-util';
-import * as Crypto from 'expo-crypto'; <span class="code-comment">// React Native crypto wrapper for iOS/Android APIs</span>
-            </div>
-            
-            <div class="crypto-highlight">
-                <strong>Libraries:</strong>
-                <ul>
-                    <li><strong>TweetNaCl:</strong> Industry-standard NaCl implementation (Daniel J. Bernstein's Networking and Cryptography Library)</li>
-                    <li><strong>Expo Crypto:</strong> React Native wrapper for platform-native cryptographic APIs</li>
-                    <li><strong>Platform APIs:</strong> iOS CryptoKit and Android cryptographic services</li>
-                </ul>
-            </div>
-
-            <h3>Encryption Algorithms</h3>
-            <table class="algorithm-table">
-                <thead>
-                    <tr>
-                        <th>Component</th>
-                        <th>Algorithm</th>
-                        <th>Key Size</th>
-                        <th>Standard</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Symmetric Encryption</strong></td>
-                        <td>XSalsa20 + Poly1305 (via NaCl secretbox)</td>
-                        <td>256-bit</td>
-                        <td>RFC 7539, NaCl standard</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Asymmetric Encryption</strong></td>
-                        <td>Curve25519 + XSalsa20 + Poly1305 (via NaCl box)</td>
-                        <td>256-bit</td>
-                        <td>RFC 7748, NaCl standard</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Key Generation</strong></td>
-                        <td>Platform CSPRNG (iOS: SecRandomCopyBytes, Android: SecureRandom)</td>
-                        <td>256-bit</td>
-                        <td>FIPS 140-2</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Hashing</strong></td>
-                        <td>SHA-256</td>
-                        <td>256-bit</td>
-                        <td>FIPS 180-4</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>🗝️ Key Management Architecture</h2>
-            
-            <h3>User Key Pair Generation</h3>
-            <div class="code-block">
-<span class="code-comment">// Each user gets an asymmetric key pair for secure key exchange</span>
-static async generateAndStoreUserKeys(userId: string): Promise&lt;UserKeys | null&gt; {
-  const keyPair = nacl.box.keyPair(); <span class="code-comment">// Curve25519 key pair</span>
-  <span class="code-comment">// Keys stored securely using platform keychain</span>
-}
-            </div>
-
-            <h3>Group Key Generation</h3>
-            <div class="code-block">
-<span class="code-comment">// Each group gets a symmetric key for message encryption</span>
-static async generateGroopKey(groopId: string): Promise&lt;string | null&gt; {
-  const key = await Crypto.getRandomBytesAsync(nacl.secretbox.keyLength); <span class="code-comment">// 256-bit</span>
-  <span class="code-comment">// Stored securely using iOS Keychain/Android Keystore</span>
-}
-            </div>
-
-            <h2>🔒 Security Features</h2>
-            
-            <div class="compliance-grid">
-                <div class="compliance-card">
-                    <div class="compliance-icon">⚡</div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>End-to-End Encryption</h3>
+                    <p>Messages are encrypted on your device and can only be read by your group members.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔑</div>
+                    <h3>256-bit Keys</h3>
+                    <p>Uses military-grade 256-bit encryption keys for maximum security.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
                     <h3>Forward Secrecy</h3>
-                    <p>New random nonce for each message. Group keys can be rotated independently.</p>
+                    <p>Each message uses a unique encryption key for enhanced security.</p>
                 </div>
                 
-                <div class="compliance-card">
-                    <div class="compliance-icon">🛡️</div>
-                    <h3>Authentication</h3>
-                    <p>All encrypted data includes Poly1305 MAC for integrity verification.</p>
-                </div>
-                
-                <div class="compliance-card">
-                    <div class="compliance-icon">🔐</div>
-                    <h3>Secure Storage</h3>
-                    <p>Platform-level secure storage protects private keys using iOS Keychain/Android Keystore.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Industry Standards</h3>
+                    <p>Built using proven cryptographic algorithms approved by international standards.</p>
                 </div>
             </div>
-
-            <h2>📱 Platform Integration</h2>
-            
-            <div class="tech-specs">
-                <h3>iOS Implementation</h3>
-                <ul>
-                    <li>Uses iOS CryptoKit and Security Framework</li>
-                    <li>Keys stored in iOS Keychain with device-only access</li>
-                    <li>CSPRNG via SecRandomCopyBytes</li>
-                    <li>Respects App Transport Security requirements</li>
-                </ul>
-                
-                <h3>Android Implementation</h3>
-                <ul>
-                    <li>Uses Android Keystore and Crypto APIs</li>
-                    <li>Hardware-backed security when available (TEE/HSM)</li>
-                    <li>CSPRNG via SecureRandom</li>
-                    <li>Follows Android security best practices</li>
-                </ul>
-            </div>
-
-            <h2>🌍 Compliance & Standards</h2>
-            
-            <div class="crypto-highlight">
-                <h3>International Standards Compliance</h3>
-                <ul>
-                    <li>✅ <strong>FIPS 140-2:</strong> Key generation using certified CSPRNGs</li>
-                    <li>✅ <strong>RFC 7748:</strong> Curve25519 elliptic curve cryptography</li>
-                    <li>✅ <strong>RFC 7539:</strong> ChaCha20-Poly1305 authenticated encryption</li>
-                    <li>✅ <strong>NaCl Standard:</strong> Daniel J. Bernstein's NaCl specification</li>
-                    <li>✅ <strong>IETF Standards:</strong> All algorithms approved by IETF</li>
-                </ul>
-            </div>
-
-            <h3>Export Control Classification</h3>
-            <ul>
-                <li><strong>ECCN:</strong> 5D002 (standard cryptographic software)</li>
-                <li><strong>Classification:</strong> Mass market cryptographic software</li>
-                <li><strong>Export License:</strong> Not required (standard algorithms, publicly available)</li>
-            </ul>
-
-            <h2>🎯 Technical Summary</h2>
-            
-            <p>GroopTroop uses only standard, internationally accepted cryptographic algorithms:</p>
-            
-            <ul>
-                <li><strong>No proprietary encryption</strong> - All algorithms are IEEE/IETF/NIST approved</li>
-                <li><strong>Standard implementations</strong> - TweetNaCl is the reference NaCl implementation</li>
-                <li><strong>Platform integration</strong> - Uses iOS/Android native crypto APIs via React Native</li>
-                <li><strong>Export compliance</strong> - Qualifies for mass market software exemption</li>
-                <li><strong>Open source libraries</strong> - All cryptographic code is publicly auditable</li>
-            </ul>
 
             <div class="crypto-highlight">
-                <h3>🔒 Conclusion</h3>
-                <p>GroopTroop's encryption implementation uses only standard, well-vetted cryptographic algorithms and libraries. The app does not implement any custom cryptographic protocols or use any proprietary encryption methods. All encryption is performed using internationally accepted standards through established, open-source libraries.</p>
-                
-                <p><strong>This implementation qualifies for the standard software exemption under U.S. export control regulations and does not require additional export documentation.</strong></p>
+                <h3>🌍 International Compliance</h3>
+                <p>GroopTroop uses only standard, internationally accepted cryptographic algorithms. Our implementation complies with:</p>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>✅ <strong>FIPS 140-2</strong> certified cryptographic standards</li>
+                    <li>✅ <strong>RFC standards</strong> for encryption protocols</li>
+                    <li>✅ <strong>IETF approved</strong> algorithms</li>
+                    <li>✅ <strong>Export compliant</strong> - no proprietary encryption</li>
+                </ul>
             </div>
+
+            <h2>🔧 How It Works</h2>
+            
+            <p>When you send a message in GroopTroop:</p>
+            <ol style="margin-left: 20px; margin-top: 15px; color: #555;">
+                <li>Your message is encrypted on your device before leaving your phone</li>
+                <li>Only your group members have the keys to decrypt the message</li>
+                <li>Even GroopTroop servers cannot read your encrypted messages</li>
+                <li>Messages remain encrypted during transmission and storage</li>
+            </ol>
+
+            <h2>📱 Platform Security</h2>
+            
+            <p>GroopTroop leverages your device's built-in security features:</p>
+            <ul style="margin-left: 20px; margin-top: 15px; color: #555;">
+                <li><strong>iOS:</strong> Secure Enclave and Keychain Services</li>
+                <li><strong>Android:</strong> Hardware Security Module when available</li>
+                <li><strong>Key Storage:</strong> Platform-native secure storage</li>
+                <li><strong>Random Generation:</strong> Cryptographically secure random number generators</li>
+            </ul>
             
             <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #888;">
                 <p>© 2025 GroopTroop. Made with ❤️ for secure group travel.</p>
             </div>
         </div>
     </div>
-
-    <script>
-        function downloadPDF() {
-            // Create the PDF content as a blob
-            const pdfContent = createPDFContent();
-            
-            // Create blob and download
-            const blob = new Blob([pdfContent], { type: 'application/pdf' });
-            const url = window.URL.createObjectURL(blob);
-            
-            // Create download link
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'GroopTroop-Encryption-Specification.pdf';
-            document.body.appendChild(a);
-            a.click();
-            
-            // Cleanup
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(a);
-        }
-        
-        function createPDFContent() {
-            // For now, create a text version. 
-            // You can replace this with actual PDF generation using a library like jsPDF
-            return `GroopTroop Encryption Specification
-            
-This document contains the complete technical specification for GroopTroop's encryption implementation.
-
-For the complete PDF version, please visit: https://nas4146.github.io/groopt-site/encryption.html
-
-GroopTroop implements end-to-end encryption for group messaging using standard, internationally accepted cryptographic algorithms. The app does not use any proprietary encryption methods.
-
-Technical Details:
-- Symmetric Encryption: XSalsa20 + Poly1305 (via NaCl secretbox) - 256-bit - RFC 7539, NaCl standard
-- Asymmetric Encryption: Curve25519 + XSalsa20 + Poly1305 (via NaCl box) - 256-bit - RFC 7748, NaCl standard
-- Key Generation: Platform CSPRNG (iOS: SecRandomCopyBytes, Android: SecureRandom) - 256-bit - FIPS 140-2
-- Hashing: SHA-256 - 256-bit - FIPS 180-4
-
-© 2025 GroopTroop - Secure Group Travel`;
-        }
-    </script>
 </body>
 </html>
