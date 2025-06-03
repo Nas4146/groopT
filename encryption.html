@@ -167,6 +167,16 @@
             color: #28a745;
         }
         
+        .new-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-tabs {
@@ -216,11 +226,11 @@
             
             <h1>End-to-End Encryption</h1>
             
-            <p>GroopTroop protects your group conversations and travel plans with industry-standard, military-grade encryption. Your privacy and security are our top priorities.</p>
+            <p>GroopTroop protects your group conversations, travel plans, and shared photos with industry-standard, military-grade encryption. Your privacy and security are our top priorities.</p>
             
             <div class="download-section">
                 <h3>📋 Technical Documentation</h3>
-                <p>Download our comprehensive encryption specification for detailed technical implementation.</p>
+                <p>Download our comprehensive encryption specification for detailed technical implementation and compliance information.</p>
                 <a href="GroopTroop-Encryption-Specification.pdf" class="download-btn" download>
                     📄 Download Encryption Specification
                 </a>
@@ -232,61 +242,97 @@
                 <div class="feature-card">
                     <div class="feature-icon">🔐</div>
                     <h3>End-to-End Encryption</h3>
-                    <p>Messages are encrypted on your device and can only be read by your group members.</p>
+                    <p>Messages and photos are encrypted on your device and can only be read by your group members.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Encrypted Media Sharing <span class="new-badge">NEW</span></h3>
+                    <p>Photos taken with camera or selected from gallery are fully encrypted using the same military-grade security as messages.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🔑</div>
                     <h3>256-bit Keys</h3>
-                    <p>Uses military-grade 256-bit encryption keys for maximum security.</p>
+                    <p>Uses military-grade 256-bit encryption keys with XSalsa20 cipher and Poly1305 authentication for maximum security.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>Forward Secrecy</h3>
-                    <p>Each message uses a unique encryption key for enhanced security.</p>
+                    <p>Each message and image uses a unique encryption key for enhanced security. Past communications remain secure even if keys are compromised.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
                     <h3>Industry Standards</h3>
-                    <p>Built using proven cryptographic algorithms approved by international standards.</p>
+                    <p>Built using proven cryptographic algorithms approved by international standards including FIPS 140-2 and IETF RFC specifications.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Smart Caching <span class="new-badge">NEW</span></h3>
+                    <p>Encrypted photos load instantly on repeat views through intelligent local caching while maintaining full security.</p>
                 </div>
             </div>
 
             <div class="crypto-highlight">
                 <h3>🌍 International Compliance</h3>
-                <p>GroopTroop uses only standard, internationally accepted cryptographic algorithms. Our implementation complies with:</p>
+                <p>GroopTroop uses only standard, internationally accepted cryptographic algorithms for both messaging and multimedia content. Our implementation complies with:</p>
                 <ul style="margin-left: 20px; margin-top: 15px;">
                     <li>✅ <strong>FIPS 140-2</strong> certified cryptographic standards</li>
-                    <li>✅ <strong>RFC standards</strong> for encryption protocols</li>
-                    <li>✅ <strong>IETF approved</strong> algorithms</li>
-                    <li>✅ <strong>Export compliant</strong> - no proprietary encryption</li>
+                    <li>✅ <strong>RFC 7748 & RFC 7539</strong> for Curve25519 and XSalsa20+Poly1305</li>
+                    <li>✅ <strong>NaCl Standard</strong> (Daniel J. Bernstein's Networking and Cryptography Library)</li>
+                    <li>✅ <strong>IETF approved</strong> algorithms for all encryption operations</li>
+                    <li>✅ <strong>Export compliant</strong> - no proprietary encryption methods</li>
                 </ul>
             </div>
 
             <h2>🔧 How It Works</h2>
             
-            <p>When you send a message in GroopTroop:</p>
-            <ol style="margin-left: 20px; margin-top: 15px; color: #555;">
+            <p><strong>Messages:</strong> When you send a message in GroopTroop:</p>
+            <ol style="margin-left: 20px; margin-top: 15px; margin-bottom: 20px; color: #555;">
                 <li>Your message is encrypted on your device before leaving your phone</li>
                 <li>Only your group members have the keys to decrypt the message</li>
                 <li>Even GroopTroop servers cannot read your encrypted messages</li>
                 <li>Messages remain encrypted during transmission and storage</li>
             </ol>
 
+            <p><strong>Photos & Media:</strong> When you share images in GroopTroop:</p>
+            <ol style="margin-left: 20px; margin-top: 15px; color: #555;">
+                <li>Photos are encrypted using the same algorithm as your messages</li>
+                <li>Encrypted image data is uploaded to secure cloud storage</li>
+                <li>Group members automatically decrypt images when viewing</li>
+                <li>Decrypted photos are cached locally for instant loading</li>
+                <li>Original unencrypted photos never leave your device</li>
+            </ol>
+
             <h2>📱 Platform Security</h2>
             
-            <p>GroopTroop leverages your device's built-in security features:</p>
+            <p>GroopTroop leverages your device's built-in security features for both messages and media:</p>
             <ul style="margin-left: 20px; margin-top: 15px; color: #555;">
-                <li><strong>iOS:</strong> Secure Enclave and Keychain Services</li>
-                <li><strong>Android:</strong> Hardware Security Module when available</li>
-                <li><strong>Key Storage:</strong> Platform-native secure storage</li>
+                <li><strong>iOS:</strong> Secure Enclave, Keychain Services, and CryptoKit</li>
+                <li><strong>Android:</strong> Hardware Security Module and Android Keystore</li>
+                <li><strong>Key Storage:</strong> Platform-native secure storage with device-only access</li>
                 <li><strong>Random Generation:</strong> Cryptographically secure random number generators</li>
+                <li><strong>Media Cache:</strong> Encrypted photos cached in app-private directories</li>
             </ul>
+
+            <h2>🔐 Technical Highlights</h2>
+            
+            <div class="crypto-highlight">
+                <h3>🛠️ Unified Security Architecture</h3>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li><strong>Same Algorithm:</strong> XSalsa20 + Poly1305 for both messages and media</li>
+                    <li><strong>Same Keys:</strong> Group symmetric keys secure all content types</li>
+                    <li><strong>Same Standards:</strong> All encryption follows IETF specifications</li>
+                    <li><strong>Zero Custom Crypto:</strong> Only proven, auditable implementations</li>
+                </ul>
+            </div>
             
             <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #888;">
                 <p>© 2025 GroopTroop. Made with ❤️ for secure group travel.</p>
+                <p style="margin-top: 5px; font-size: 0.9em;">Version 1.0.0 • Document Updated: June 2025</p>
             </div>
         </div>
     </div>
